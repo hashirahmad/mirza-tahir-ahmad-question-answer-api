@@ -1,4 +1,4 @@
-# README
+# READ ME
 
 ## How to run
 
