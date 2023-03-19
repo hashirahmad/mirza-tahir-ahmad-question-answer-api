@@ -1,0 +1,19 @@
+{
+  "name": "Mirza Tahir Ahmad Question Answer API",
+  "version": "1.0.0",
+  "description": "An API which provides access to hundreds of Questions and Answers by Hazrat Mirza Tahir Ahmad.",
+  "title": "Mirza Tahir Ahmad Question Answer API",
+  "url" 		: "",
+  "sampleUrl": "DYNAMIC",
+  "header": {
+    "title": "Overview",
+    "filename": "src/templates/apidocs_template/header.md"
+  },
+  "footer": {
+    "filename": "src/templates/apidocs_template/footer.md"
+  },
+  "template": {
+  	"withCompare": true,
+  	"withGenerator": true
+  }
+}
