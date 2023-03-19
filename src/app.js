@@ -131,8 +131,7 @@ class App {
                 const errorCode = e.errorCode || 'EMBARRASSING_ERR'
                 const { objectDetails } = e
                 const userMessage =
-                    e.templateUserMessage ||
-                    'Uh oh . . . an unknown error occurred'
+                    e.userMessage || 'Uh oh . . . an unknown error occurred'
                 return restify.fail({
                     req,
                     res,

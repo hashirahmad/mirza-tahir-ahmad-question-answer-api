@@ -6,7 +6,7 @@
 /*   By: Hashir <hashir@coinmode.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 18:33:25 by Hashir            #+#    #+#             */
-/*   Updated: 2023/03/19 19:39:27 by Hashir           ###   ########.fr       */
+/*   Updated: 2023/03/19 19:59:18 by Hashir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,6 @@ module.exports = (url) => {
         const category = restify.getAsStringAlphanumeric(req, 'category')
 
         const response = categoryLogic.getCount({ category })
-        restify.ok(req, res, next, response)
+        restify.ok({ req, res, next, response })
     })
 }

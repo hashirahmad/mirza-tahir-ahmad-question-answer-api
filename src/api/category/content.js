@@ -6,7 +6,7 @@
 /*   By: Hashir <hashir@coinmode.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 18:33:25 by Hashir            #+#    #+#             */
-/*   Updated: 2023/03/19 19:40:06 by Hashir           ###   ########.fr       */
+/*   Updated: 2023/03/19 19:59:32 by Hashir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,6 @@ module.exports = (url) => {
         )
 
         const response = categoryLogic.getCategoryContent({ category })
-        restify.ok(req, res, next, response)
+        restify.ok({ req, res, next, response })
     })
 }
