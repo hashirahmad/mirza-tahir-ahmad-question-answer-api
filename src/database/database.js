@@ -6,7 +6,7 @@
 /*   By: Hashir <hashir@coinmode.com>               +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 15:04:32 by Hashir            #+#    #+#             */
-/*   Updated: 2023/03/19 18:32:24 by Hashir           ###   ########.fr       */
+/*   Updated: 2023/03/20 21:58:43 by Hashir           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,36 @@ class Database {
             })
         }
         return categories
+    }
+
+    /**
+     * It will search the specified content through `field`
+     * i.e. `question` or if none provided then will search
+     * anything and everything that can match the search query.
+     * By default there is no `limit` however when necessary it will
+     * get up to that much and also return how many matches there were
+     * in total.
+     */
+    // eslint-disable-next-line class-methods-use-this
+    searchContent({ search = '', limit = qaArray.length, field = '' }) {
+        const content = []
+        let found = 0
+        for (let i = 0; i < qaArray.length; i += 1) {
+            const entry = qaArray[i]
+            const stringified = JSON.stringify(
+                field ? entry[field] : entry
+            ).toLowerCase()
+            if (stringified.includes(search.toLowerCase())) {
+                found += 1
+                if (found < limit) {
+                    content.push({
+                        ...entry,
+                        url: undefined,
+                    })
+                }
+            }
+        }
+        return { found, content }
     }
 }
 
